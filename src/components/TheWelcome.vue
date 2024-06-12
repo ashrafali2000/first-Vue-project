@@ -1,13 +1,35 @@
 <script setup>
+import { useRoute } from "vue-router";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import ToolingIcon from "./icons/IconTooling.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import { onBeforeUpdate, onMounted, onUpdated, watch } from "vue";
+const route = useRoute();
+// watch(
+//   () => route.params.name,
+//   (newName, oldName) => {
+//     console.log(route.params.name);
+//     console.log("newName----", newName);
+//     console.log("oldName----", oldName);
+//   }
+// );
+// onMounted(() => {
+//   console.log(route.params.name);
+// });
 </script>
 
 <template>
+  <p>{{ route.params.name }} Profile Page</p>
+  <img
+    alt="Vue logo"
+    class="logo rounded-full"
+    src="./assets/myimg.jpeg"
+    width="125"
+    height="125"
+  />
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
